@@ -3,13 +3,10 @@ node webapp{
 	[webapp.fo.rest]	 
 }
 
-
 node intf_fo{
 	[intf.fo]
 }
-
  
-
 node impl{
 	[impl.fo]
 	[impl.biz]
@@ -19,6 +16,4 @@ node impl{
 [webapp.fo.rest] -down-> [intf.fo]
 [impl.fo] .up.> [intf.fo] : implements
 
- 
- 
 @enduml

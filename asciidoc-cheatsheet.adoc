@@ -1,0 +1,71 @@
+= test
+:author: David Buret
+:source-highlighter: pygments
+:pygments-style: emacs
+:icons: font
+:sectnums:
+:toclevels: 4
+:toc:
+:imagesdir: images/
+
+ 
+== Code
+
+[source,go]
+----
+func main() {
+	var programVersion = "0.4"
+	var programName = "gse"
+
+	var uri string
+	var port string
+
+	uri, port = pathandport.Parse(programName, "28657") # // #
+
+	mux := http.NewServeMux()
+	mux.HandleFunc(uri, handler)
+	s := &http.Server{
+		Addr:    fmt.Sprintf(":%s", port),
+		Handler: mux,
+	}
+
+	log.Printf("Starting %s (%s) on port %s with basepath %s ...\n", programName, programVersion, port, uri)
+	log.Fatal(s.ListenAndServe()) # // #
+}
+----
+commentaire 1
+commentaire 2
+
+== listes
+
+=== par defaut
+
+.Type de mémoire
+RAM:: Random Access Memory
+ROM:: Read Only Memory
+NVRAM:: Non volatile random access memory
+
+=== horizontale
+
+[horizontal]
+.Type de mémoire
+RAM:: Random Access Memory
+ROM:: Read Only Memory
+NVRAM:: Non volatile random access memory
+
+
+== checklist
+
+
+. Tâches à faire
+- [*] Tache 1
+- [x] Tache 2
+- [ ] Tache 3
+- [ ] Tache 4
+
+== plantUML
+
+plantuml::test.puml[plantuml,png]
+
+
+

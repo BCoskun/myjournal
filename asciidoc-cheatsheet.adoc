@@ -7,11 +7,22 @@
 :toclevels: 4
 :toc:
 :imagesdir: images/
+:toc-title: Sommaire
 
  
+ 
+[descrete]
+== Controle du document
+
+blah blah
+
+kbd:[Ctrl + 1]
+
+// comment
+
 == Code
 
-[source,go]
+[source,go,linenums]
 ----
 func main() {
 	var programVersion = "0.4"
@@ -20,7 +31,7 @@ func main() {
 	var uri string
 	var port string
 
-	uri, port = pathandport.Parse(programName, "28657") # // #
+	uri, port = pathandport.Parse(programName, "28657") # <1>
 
 	mux := http.NewServeMux()
 	mux.HandleFunc(uri, handler)
@@ -30,11 +41,11 @@ func main() {
 	}
 
 	log.Printf("Starting %s (%s) on port %s with basepath %s ...\n", programName, programVersion, port, uri)
-	log.Fatal(s.ListenAndServe()) # // #
+	log.Fatal(s.ListenAndServe()) # <2>
 }
 ----
- commentaire 1
- commentaire 2
+<1> commentaire 1
+<2> commentaire 2
 
 == listes
 

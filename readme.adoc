@@ -26,9 +26,9 @@ At the moment my hot topics are:
 *** gitlab on premises for work
 *** github when playing at home
 * how to improve day 2 ops in a world where all the hype  is about ci/cd
-** hashicorp tools
-** kube
-** dcos ?
+** hashicorp tools, k8s, dcos ...
+** kibana,grafana
+** alerting
 * how to influence management in a way that improve both company efficiency and people wellbeing
 ** the toyota way
 *** lean management is just a tool, lets focus on the spirit

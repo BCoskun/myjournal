@@ -30,13 +30,17 @@ cette section est in pense bete des sujets a creuser
 Working with Stakeholders Using Viewpoints and Perspectives (
 Nick Rozanski,
 Eoin Woods)
+* doc as code, arc42 : https://doctoolchain.github.io/docToolchain/
  
 == Software Systems Architecture: Working with Stakeholders Using Viewpoints and Perspectives 
 
 .Notes de lectures
 * le triangle qualite,cout,time to market est a reutiliser
+** l'ameliorer en montrant que methodes et outillage modifient la forme du triangle et pas seuleent notre position dedans
+
 * il faut devenir expert un diagrammes de deploiement, et adapterr le concept au plateformes cloud & conteneurs
-* il faut formaliser quels sont mes stakeholders, et definir les viewpoints et perspectives adaptés
+* il faut formaliser quels sont mes stakeholders, et definir les viewpoints et perspectives adaptés a notre contexte, puis les repartir entre nos livrables (DA, Narc, ppt caop, ppt cvsp )
+** reflechir en particulier à la prod: quel est leur besoin
 
  
 == scrap section

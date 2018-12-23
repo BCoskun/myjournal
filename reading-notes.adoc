@@ -41,8 +41,10 @@ Eoin Woods)
  
 == scrap section
 
+.how to display plantuml in asciidoc on github
 [source]
 ----
+:gitplant: http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/DBuret/myjournal/master/
 image::{gitplant}/test.puml[test]
 ----
 

@@ -1,27 +1,72 @@
 @startuml
+ 
 
-actor actor
-agent agent
-artifact artifact
-boundary boundary
-card card
-cloud cloud
-component component
-control control
-database database
-entity entity
-file file
-folder folder
-frame frame
-interface  interface
-node node
-package package
-queue queue
-stack stack
-rectangle rectangle
-storage storage
-usecase usecase
+cloud internet {
+   actor ExpertPacifica 
+}
+
+node Adsi 
+
+ExpertPacifica -d-> Adsi: https
+Rectangle siassurances {
+
+Rectangle dmzFront {
+Node F5AssurancesExterne
+}
+
+Adsi -d-> F5AssurancesExterne: https
+
+Rectangle dmzSeliProd {
+Cloud Idraapckseli {
+   component traefikselidi
+component traefikselida
+
+   Component FrontAuthda
+Component FrontAuthdi
+   Component FrontStatiquedi
+Component FrontStatiqueda
+}
+}
+
+F5AssurancesExterne .d.> traefikselidi: http
+
+F5AssurancesExterne .d.> traefikselida: http
+
+traefikselidi .d.> FrontStatiquedi
+traefikselidi .d.> FrontAuthdi
+
+traefikselida .d.> FrontStatiqueda
+traefikselida .d.> FrontAuthda
+
+Rectangle dmzProd {
+Component F5AssurancesInterne
+
+FrontAuthdi .d.> F5AssurancesInterne
+
+FrontAuthda .d.> F5AssurancesInterne
 
 
+Cloud idraa-pck-prod {
+Component traefikdi
+Component Backenddi
+Component traefikda
+Component Backendda
+}
 
+Database mysql
+}
+
+ F5AssurancesInterne .d.> traefikdi
+
+F5AssurancesInterne .d.> traefikda
+
+traefikdi .d.> Backenddi
+traefikda .d.> Backendda
+
+
+Backendda .d.> mysql
+Backenddi .d.> mysql
+
+
+}
 @enduml

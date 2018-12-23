@@ -39,4 +39,30 @@ Eoin Woods)
 * il faut formaliser quels sont mes stakeholders, et definir les viewpoints et perspectives adaptés
 
  
- 
+== scrap section
+
+.objets dans un diagramme de deploiement
+[plantuml]
+----
+actor actor
+agent agent
+artifact artifact
+boundary boundary
+card card
+cloud cloud
+component component
+control control
+database database
+entity entity
+file file
+folder folder
+frame frame
+interface  interface
+node node
+package package
+queue queue
+stack stack
+rectangle rectangle
+storage storage
+usecase usecase
+----

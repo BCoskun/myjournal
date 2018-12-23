@@ -2,22 +2,22 @@
  
 
 cloud internet {
-   actor ExpertPacifica 
+   actor user 
 }
 
-node Adsi 
+node fw 
 
-ExpertPacifica -d-> Adsi: https
-Rectangle siassurances {
+user -d-> fw: https
+Rectangle IS {
 
 Rectangle dmzFront {
-Node F5AssurancesExterne
+Node externalRP
 }
 
-Adsi -d-> F5AssurancesExterne: https
+fw -d-> externalRP: https
 
-Rectangle dmzSeliProd {
-Cloud Idraapckseli {
+Rectangle dmzInternet {
+Cloud IdraaInternet {
    component traefikselidi
 component traefikselida
 
@@ -28,9 +28,9 @@ Component FrontStatiqueda
 }
 }
 
-F5AssurancesExterne .d.> traefikselidi: http
+externalRP .d.> traefikselidi: http
 
-F5AssurancesExterne .d.> traefikselida: http
+externalRP .d.> traefikselida: http
 
 traefikselidi .d.> FrontStatiquedi
 traefikselidi .d.> FrontAuthdi
@@ -39,14 +39,14 @@ traefikselida .d.> FrontStatiqueda
 traefikselida .d.> FrontAuthda
 
 Rectangle dmzProd {
-Component F5AssurancesInterne
+Component internalRP
 
-FrontAuthdi .d.> F5AssurancesInterne
+FrontAuthdi .d.> internalRP
 
-FrontAuthda .d.> F5AssurancesInterne
+FrontAuthda .d.> internalRP
 
 
-Cloud idraa-pck-prod {
+Cloud idraa-prod {
 Component traefikdi
 Component Backenddi
 Component traefikda
@@ -56,9 +56,9 @@ Component Backendda
 Database mysql
 }
 
- F5AssurancesInterne .d.> traefikdi
+ internalRP .d.> traefikdi
 
-F5AssurancesInterne .d.> traefikda
+internalRP .d.> traefikda
 
 traefikdi .d.> Backenddi
 traefikda .d.> Backendda

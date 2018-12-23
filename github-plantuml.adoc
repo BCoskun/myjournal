@@ -18,7 +18,7 @@ but for homework, github ascidoc parsing does not understand plantuml
 
 == solution
 
- use palntuml online server to parse the plantuml file on github, and use its full url on githuab asciidoc files
+ use palntuml online server to parse the plantuml file on github, and use its full url in github asciidoc files
  
 .image url 
 http://www.plantuml.com/plantuml/proxy?src=https://raw.github.com/plantuml/plantuml-server/master/src/main/webapp/resource/test2diagrams.txt
@@ -39,6 +39,9 @@ syntax is very long, let'use an asciidoc variable +gitplant+
 image::{gitplant}/test.puml[test]
 ----
 
-=== plantum deployment diag
+
+WARNING: I still have to check how to manage github image caching.
+
+=== plantum test
 
 image::{gitplant}/test.puml[test]

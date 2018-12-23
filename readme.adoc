@@ -14,7 +14,9 @@
 
 this project is just a filestore about my ideas, notes, etc... that I can use from anywhere.
 
-I'm a senior infrastructure architect, so I'm interrested in various IT things:
+I'm a senior infrastructure architect, so I'm interrested in various IT things.
+
+At the moment my hot topics are:
 
 * how to efficienly write architecture documents
 ** after years with visio, word and powerpoint, it's time to move to 'doc as code'.
@@ -23,12 +25,17 @@ I'm a senior infrastructure architect, so I'm interrested in various IT things:
 *** plantuml
 *** gitlab on premises for work
 *** github when playing at home
-* how to improve continuous deployment
+* how to improve day 2 ops in a world where all the hype  is about ci/cd
 ** hashicorp tools
 ** kube
 ** dcos ?
-* how to improve day 2 ops
+* how to influence management in a way that improve both company efficiency and people wellbeing
+** the toyota way
+*** lean management is just a tool, lets focus on the spirit
+*** *develop people*
+*** *continuous improvment*
 * new software
+* new methods
 
 
 

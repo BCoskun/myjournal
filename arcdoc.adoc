@@ -1,0 +1,30 @@
+= Architecture Documentation
+:author: David Buret
+:source-highlighter: pygments
+:pygments-style: emacs
+:icons: font
+:sectnums:
+:toclevels: 4
+:toc:
+:imagesdir: images/
+:toc-title: Sommaire
+:gitplant: http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/DBuret/myjournal/master/
+
+== source of informations
+
+* doc as code
+* https://doctoolchain.github.io/docToolchain/
+* https://docs.arc42.org/home/
+* https://isaqb.org/ CPSA-foundation
+
+== activity diagram
+
+
+== scrap area
+
+...
+
+== activity diagram
+
+image::{gitplant}/activity-diagram-sample.puml[activity diagram]
+

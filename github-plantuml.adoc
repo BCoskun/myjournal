@@ -20,41 +20,25 @@ but for homework, github ascidoc parsing does not understand plantuml
 
  use palntuml online server to parse the plantuml file on github, and use its full url on githuab asciidoc files
  
-.ex image url 
+.image url 
 http://www.plantuml.com/plantuml/proxy?src=https://raw.github.com/plantuml/plantuml-server/master/src/main/webapp/resource/test2diagrams.txt
 
 .my test
+
+[source]
+----
 image::http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/DBuret/myjournal/master/test.puml[test]
+----
 
-syntax is very long, let'use an asciidoc variable +gitplant+ and use it with ´{gitplant}´
+syntax is very long, let'use an asciidoc variable +gitplant+
 
-.mon test avec variable
+.how to display plantuml in asciidoc on github
+[source]
+----
+:gitplant: http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/DBuret/myjournal/master/
 image::{gitplant}/test.puml[test]
+----
 
 === plantum deployment diag
 
-.objets dans un diagramme de deploiement
-[plantuml]
-----
-actor actor
-agent agent
-artifact artifact
-boundary boundary
-card card
-cloud cloud
-component component
-control control
-database database
-entity entity
-file file
-folder folder
-frame frame
-interface  interface
-node node
-package package
-queue queue
-stack stack
-rectangle rectangle
-storage storage
-usecase usecase
-----
+image::{gitplant}/test.puml[test]

@@ -41,47 +41,11 @@ Eoin Woods)
  
 == scrap section
 
-=== github et plantuml
-
- github ne semble pas interpreter le plantuml
- 
- on va tenter de faire generer a la volee le diag par le serveur plantuml, et utiliser cette url comme url source de l'image a afficher
- 
-.ex url de l'image
-http://www.plantuml.com/plantuml/proxy?src=https://raw.github.com/plantuml/plantuml-server/master/src/main/webapp/resource/test2diagrams.txt
-
-.mon test
-image::http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/DBuret/myjournal/master/test.puml[test]
-
-maintenant que cela marche on va simplifier l'ecriture en mettant le path de git en variable asciidoc +gitplant+ a refrencer par {gitplant}
-
-.mon test avec variable
+[source]
+----
 image::{gitplant}/test.puml[test]
+----
 
 === plantum deployment diag
 
-.objets dans un diagramme de deploiement
-[plantuml]
-----
-actor actor
-agent agent
-artifact artifact
-boundary boundary
-card card
-cloud cloud
-component component
-control control
-database database
-entity entity
-file file
-folder folder
-frame frame
-interface  interface
-node node
-package package
-queue queue
-stack stack
-rectangle rectangle
-storage storage
-usecase usecase
-----
+image::{gitplant}/deploy.puml[objets dans un diagramme de deploiement]

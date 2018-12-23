@@ -41,6 +41,22 @@ Eoin Woods)
  
 == scrap section
 
+=== github et plantuml
+
+way is significantly different and simpler than the answer above; it uses the PlantUML proxy service:
+
+http://www.plantuml.com/plantuml/proxy?src=https://raw.github.com/plantuml/plantuml-server/master/src/main/webapp/resource/test2diagrams.txt
+
+The GitHub asciidoc for this would be:
+
+
+
+image::http://www.plantuml.com/plantuml/proxy?src=https://raw.github.com/dburet/myjounal/test.puml
+
+
+
+=== plantum deployment diag
+
 .objets dans un diagramme de deploiement
 [plantuml]
 ----

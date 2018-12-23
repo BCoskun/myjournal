@@ -51,7 +51,7 @@ The GitHub asciidoc for this would be:
 
 
 
-image::http://www.plantuml.com/plantuml/proxy?src=https://raw.github.com/dburet/myjournal/test.puml
+image::http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/DBuret/myjournal/master/test.puml
 
 
 

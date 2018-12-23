@@ -43,15 +43,15 @@ Eoin Woods)
 
 === github et plantuml
 
-way is significantly different and simpler than the answer above; it uses the PlantUML proxy service:
-
+ github ne semble pas interpreter le plantuml
+ 
+ on va tenter de faire generer a la volee le diag par le serveur plantuml, et utiliser cette url comme url source de l'image a afficher
+ 
+.ex url de l'image
 http://www.plantuml.com/plantuml/proxy?src=https://raw.github.com/plantuml/plantuml-server/master/src/main/webapp/resource/test2diagrams.txt
 
-The GitHub asciidoc for this would be:
-
-
-
-image::http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/DBuret/myjournal/master/test.puml
+.mon test
+image::http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/DBuret/myjournal/master/test.puml[test]
 
 
 

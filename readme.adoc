@@ -1,0 +1,35 @@
+= Captain's Log
+:author: David Buret
+:source-highlighter: pygments
+:pygments-style: emacs
+:icons: font
+:sectnums:
+:toclevels: 4
+:toc:
+:imagesdir: images/
+:toc-title: Sommaire
+:gitplant: http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/DBuret/myjournal/master/
+
+== Hi there
+
+this project is just a filestore about my ideas, notes, etc... that I can use from anywhere.
+
+I'm a senior infrastructure architect, so I'm interrested in various IT things:
+
+* how to efficienly write architecture documents
+** after years with visio, word and powerpoint, it's time to move to 'doc as code'.
+** i'm using right now
+*** asciidoc (markdown is too limited)
+*** plantuml
+*** gitlab on premises for work
+*** github when playing at home
+* how to improve continuous deployment
+** hashicorp tools
+** kube
+** dcos ?
+* how to improve day 2 ops
+* new software
+
+
+
+

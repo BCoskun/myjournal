@@ -20,6 +20,100 @@ kbd:[Ctrl + 1]
 
 // comment
 
+== texte
+
+forced + line break 
+
+
+normal, _italic_, *bold*, +mono+. 
+``double quoted'', `single quoted'. 
+
+
+"Double cité", "unique cité".
+
+normal, super , sous .
+
+Command: `ls -al` 
++mono *bold*+ 
+`passthru *bold*` 
+Commande: ls -al
+
+
+
+Path: '/some/filez.txt', '.b' 
+
+
+[red]#red text# [yellow-background]#on yellow# 
+[big]#large# [red yellow-background big]
+*all bold* 
+
+
+Chars: n__i__**b**++m++[red]##r## 
+
+
+// Comment 
+(C) (R) (TM) -- ... -> <- => <= &#182; 
+© ® ™ - ... → ← ⇒ ⇐ ¶
+
+'''' 
+Escaped: 
+\_italic_, +++_italic_+++, 
+t\__e__st, +++t__e__st+++, 
++++<b>bold</b>+++, $$<b>normal</b>$$ 
+\&#182; 
+\`not single quoted' 
+\`\`not double quoted'' 
+
+== blocs
+
+=== literal
+
+.optional title
+----
+bloc literal
+----
+
+=== sidebar
+
+.Optional Title 
+**** 
+*Sidebar* Block 
+Use: sidebar notes :) 
+**** 
+
+=== exemple
+
+.Optional Title 
+========================== 
+*Example* Block 
+Use: examples :) 
+Default caption "Example:" can be changed using 
+[caption="Custom: "] 
+before example block. 
+========================== 
+
+=== quote
+
+.Optional Title 
+[quote, cite author, cite source] 
+____ 
+*Quote* Block 
+Use: cite somebody 
+____ 
+
+=== amonition 
+
+----
+Type: paragraph 
+----
+
+.types
+- NOTE
+- TIP
+- WARNING
+- CAUTION
+- IMPORTANT
+
 == generate zdoc file with all'includes included
 
 https://github.com/asciidoctor/asciidoctor-extensions-lab/blob/master/scripts/asciidoc-coalescer.rb
@@ -85,6 +179,61 @@ NVRAM:: Non volatile random access memory
 - [ ] Tache 3
 - [ ] Tache 4
 
+== tables
+
+le tableau, ou tout ou partie de son contenu peuvent être dans un  fichier séparé 
+
+----
+\include::fichier[commentaire]
+----
+
+ou servi par un serveur web (et doc pourrait aussi bien etre le resultat d'une query)
+
+----
+\include::url[commentaire]
+----
+
+.CSV data, 15% each column 
+[format="csv",width="60%",cols="4"] 
+[frame="topbot",grid="none"] 
+|====== 
+1,2,3,4 
+a,b,c,d 
+A,B,C,D 
+|====== 
+
+.alignement dans les fellules
+[grid="rows",format="csv"] 
+[options="header",cols="^,<,<s,<,>m"] 
+|=========================== 
+ID,FName,LName,Address,Phone 
+1,Vasya,Pupkin,London,+123 
+2,X,Y,"A,B",45678 
+|=========================== 
+
+
+
+.Multiline cells, row/col span 
+|==== 
+|Date |Duration |Avg HR |Notes 
+|22-Aug-08 .2+^.^|10:24 | 157 | 
+Worked out MSHR (max sustainable 
+heart rate) by going hard 
+for this interval. 
+
+|22-Aug-08 | 152 | 
+Back-to-back with previous interval. 
+
+|24-Aug-08 3+^|none 
+
+|==== 
+
+== images 
+
+----
+image::fileOrURL[width=100%, scalewidth=17cm]
+----
+
 == plantUML
 
 === embedded 
@@ -138,5 +287,16 @@ image::{gitplant}/test.puml[test]
 ----
 
 note that src could be a web service generating puml on the fly from a use case stored in a db.
+
+
+== macro
+
+https://markhneedham.com/blog/2018/02/19/asciidoctor-creating-macro/
+
+== syntax highlighting 
+
+=== pygments styles
+
+https://help.farbox.com/pygments.html
 
 

@@ -20,6 +20,17 @@ kbd:[Ctrl + 1]
 
 // comment
 
+== generate zdoc file with all'includes included
+
+https://github.com/asciidoctor/asciidoctor-extensions-lab/blob/master/scripts/asciidoc-coalescer.rb
+
+allow HTTP includes:pass the -a allow-uri-read flag to the script:
+
+[source,sh]
+----
+$ ruby adoc.rb mydoc.adoc -a allow-uri-read 
+----
+
 == Code
 
 [source,go,linenums]
@@ -76,10 +87,12 @@ NVRAM:: Non volatile random access memory
 
 == plantUML
 
-plantuml::test.puml[plantuml,png]
+=== embedded 
 
-[plantuml]
+[source,plantuml]
 ----
+[plantuml]
+\----
 node webapp{
 	[webapp.fo.rest]	 
 }
@@ -96,6 +109,34 @@ node impl{
 
 [webapp.fo.rest] -down-> [intf.fo]
 [impl.fo] .up.> [intf.fo] : implements
+\----
 ----
+
+=== external file
+plantuml::test.puml[plantuml,png]
+
+=== url
+
+plantuml::https://raw.githubusercontent.com/DBuret/myjournal/master/test.pumll[plantuml,png]
+
+=== url that generates image
+
+need plantuml server
+[source]
+----
+image::http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/DBuret/myjournal/master/test.puml[test]
+----
+
+syntax is very long, let'use an asciidoc variable +gitplant+ giving location of server + puml file
+
+.how to display plantuml in asciidoc on github
+[source]
+----
+:gitplant: http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/DBuret/myjournal/master/
+
+image::{gitplant}/test.puml[test]
+----
+
+note that src could be a web service generating puml on the fly from a use case stored in a db.
 
 

@@ -16,7 +16,8 @@ cette section est in pense bete des sujets a creuser
  
 * uml: revenir aux sources, lire la doc officielle de http://www.omg.org
 * iso 42010
- 
+* ISO8601 norme scheduling
+
 
 == en cours
  

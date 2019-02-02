@@ -22,7 +22,7 @@ endif::[]
 I'm currently moving to asciidoc and plantuml to write docs.
 Github asciidoc parsing does not understand plantuml.
 
-WARNING: AsciiDoc on GitHub currently needs some tricks. See https://gist.github.com/dcode/0cfbf2699a1fe9b46ff04c41721dda74[itHub Flavored Asciidoc (GFA)]
+WARNING: AsciiDoc on GitHub currently needs some tricks. See https://gist.github.com/dcode/0cfbf2699a1fe9b46ff04c41721dda74[GitHub Flavored Asciidoc (GFA)] for Tips.
 
 == solution
 
@@ -37,7 +37,7 @@ http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/DBu
 image::http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/DBuret/myjournal/master/test.puml[test]
 ----
 
-This syntax is too, let's use an asciidoc variable _gitplant_
+This syntax is too long, let's use an asciidoc variable _gitplant_
 
 .Easy way to display plantuml in asciidoc on github
 [source]
@@ -59,6 +59,8 @@ If you want to use a styling shared by several plantUML diagrams, you can _inclu
 I'm using the follwoing:
  !includeurl  https://raw.githubusercontent.com/DBuret/myjournal/master/plantuml.cfg
 
-All my _skinparam_, _include_ of sprites, and so on are stored in this file. So my diagrams now contain only elements declaration and links.
+All my _skinparam_, _include_ of sprites, and so on are stored in this file.
+So my diagrams now contain only elements declaration and links.
+
 
 

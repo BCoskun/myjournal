@@ -47,7 +47,7 @@ Easy way to display plantuml in asciidoc on github
 .Result
 image::{gitplant}/test.puml[PlantUML Image]
 
-TIP: Purge an image from GitHub cache with: `curl -X PURG https://camo.githubusercontent.com/xxxxxxxxxxx`
+TIP: Purge an image from GitHub cache with: `curl -X PURGE https://camo.githubusercontent.com/xxxxxxxxxxx`
 
 == Styling PlantUML
 
@@ -59,6 +59,10 @@ I'm using the following:
 
 All my _skinparam_, _include_ of sprites, and so on are stored in this file.
 So my diagrams now contain only elements declaration and links.
+
+See link:test.puml[]
+
+
 
 
 

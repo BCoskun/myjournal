@@ -1,4 +1,4 @@
-= using github and plantuml
+= Using plantuml in AsciiDoc on GitHub
 :author: David Buret
 :source-highlighter: pygments
 :pygments-style: github
@@ -9,11 +9,20 @@
 :imagesdir: images/
 :toc-title: Sommaire
 :gitplant: http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/DBuret/myjournal/master/
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
 
 == introduction
 
 I'm currently moving to asciidoc and plantuml to write docs.
 Github asciidoc parsing does not understand plantuml.
+
+WARNING: AsciiDoc support on GitHub is far to be perfect. see
 
 == solution
 

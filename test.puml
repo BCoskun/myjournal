@@ -1,19 +1,108 @@
-@startuml
-node webapp{
-	[webapp.fo.rest]	 
+@startuml test
+
+scale 0.9
+skinparam defaultFontName Calibri
+!include <office/Concepts/firewall>
+!include <office/Servers/server_generic>
+!include <office/Servers/server_farm>
+!include <office/Servers/cluster_server>
+!include <cloudinsight/docker>
+!include <office/Servers/reverse_proxy>
+!include <office/Users/users>
+!include <office/Clouds/cloud>
+!include <office/Servers/database_server>
+!include <office/Concepts/globe_internet>
+!include <office/Databases/database_availability_group>
+!include <office/Servers/web_server>
+!include <office/Users/administrator>
+!include <office/Servers/file_server>
+
+hide stereotype
+
+skinparam {
+    ArrowColor<< https >> Red
+    ArrowColor<< http >> Green
+    ArrowColor<< ssh >> Purple
+    ArrowColor<< nfs >> DarkOrange
+    ArrowColor<< jdbc >> Blue
+    ArrowColor<< flow >> Black
+    DefaultTextAlignment center
+    BackgroundColor White
+    shadowing false
 }
 
-node intf_fo{
-	[intf.fo]
-}
- 
-node impl{
-	[impl.fo]
-	[impl.biz]
-}
-[impl.fo] -down-> [impl.biz]
+skinparam rectangle {
+    BackgroundColor<< firewall >> transparent
+    BorderThickness<< firewall >> 0  
 
-[webapp.fo.rest] -down-> [intf.fo]
-[impl.fo] .up.> [intf.fo] : implements
+    BackgroundColor<< serveur >> transparent
+    BorderThickness<< serveur >> 0
+
+    BackgroundColor<< users >> transparent
+    BorderThickness<< users >> 0
+
+    BorderColor<< groupe >> #888888
+}
+
+
+
+rectangle DMZ << dmz >> {
+    rectangle "<$reverse_proxy>\nReverse Proxy\nIPS/IDS" << serveur >> as ReverseProxy
+}
+
+rectangle "Servers LAN"  << dmz >>  as lan {
+    rectangle "<$web_server>\nApplication" << serveur >> as App
+    rectangle "<$database_server>Redis" << serveur >> as redis
+    rectangle "<$server_farm>\nCompute" << serveur >> as hpc
+    rectangle "<$database_availability_group>\nDatabase" << serveur >> as db
+    rectangle "<$file_server>\nNAS" << serveur >> as nas
+}
+
+rectangle "Admin LAN"  << dmz >>  as adminlan {
+    rectangle "<$cluster_server>\nBastion" << serveur >> as bastion
+}
+
+rectangle "<$firewall>\nexternal firewall"  << firewall >> as fwe
+rectangle "<$firewall>\ninternal firewal"  << firewall >> as fwi
+rectangle "<$firewall>\nadmin firewall E"  << firewall >> as fwa
+rectangle "<$firewall>\nadmin firewall I"  << firewall >> as fwai
+
+
+rectangle "<$users>\nInternet Users" << users >> as users
+rectangle "<$users>\nOffices Users" << users >> as office
+
+rectangle "<$globe_internet>Internet" << serveur >> as internet
+rectangle "<$cloud>\nWAN" << serveur >> as wan
+
+rectangle "<$administrator>\nAdmins" << users >> as Admins
+
+'user flow'
+users .> internet << https >> : 2
+internet .> fwe << https >>: 2
+
+office -l-> wan << https >> : 1 
+wan -l-> fwe << https >> : 1 
+
+fwe ..> ReverseProxy << https >> : "1+2"
+
+ReverseProxy .> fwi << http >> : 3
+fwi ..> App << http >> : 3
+
+'app flows'
+App --> db << jdbc >> : 4 
+App --> hpc << flow >> : 6
+App --> redis << flow >> : 5
+App --> nas << nfs >>  : 7
+
+'admin flows'
+Admins -> fwa << ssh >> : a 
+fwa -> bastion << ssh >> : a
+Admins -[hidden]-> bastion << ssh >>
+bastion -u-> fwai << ssh >> : b
+fwai -u-> App << ssh >> : b
+fwai -u-> db << ssh >> : b
+fwai -u-> hpc << ssh >> : b
+fwai -u-> redis << ssh >> : b
+fwai -u-> nas << https >> : b
 
 @enduml

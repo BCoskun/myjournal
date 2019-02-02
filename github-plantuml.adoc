@@ -12,13 +12,12 @@
 
 == introduction
 
-i'm currently moving to asciidoc and plantuml to write docs, storing these data on gitlab at work
-
-but for homework, github ascidoc parsing does not understand plantuml
+I'm currently moving to asciidoc and plantuml to write docs.
+Github asciidoc parsing does not understand plantuml.
 
 == solution
 
- use palntuml online server to parse the plantuml file on github, and use its full url in github asciidoc files
+Use plantuml online server to parse the plantuml file on github, and use its full url in github asciidoc files
  
 .image url 
 http://www.plantuml.com/plantuml/proxy?src=https://raw.github.com/plantuml/plantuml-server/master/src/main/webapp/resource/test2diagrams.txt
@@ -30,18 +29,18 @@ http://www.plantuml.com/plantuml/proxy?src=https://raw.github.com/plantuml/plant
 image::http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/DBuret/myjournal/master/test.puml[test]
 ----
 
-syntax is very long, let'use an asciidoc variable +gitplant+
+syntax is very long, let's use an asciidoc variable +gitplant+
 
 .how to display plantuml in asciidoc on github
 [source]
 ----
 :gitplant: http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/DBuret/myjournal/master/
+
 image::{gitplant}/test.puml[test]
 ----
 
-
-TIP: Purge an image from githuib cache with: `curl -X PURG https://camo.githubusercontent.com/xxxxxxxxxxx`
-
-=== plantum test
+=== Result
 
 image::{gitplant}/test.puml[PlantUML Image]
+
+TIP: Purge an image from githuib cache with: `curl -X PURG https://camo.githubusercontent.com/xxxxxxxxxxx`

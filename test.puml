@@ -1,5 +1,4 @@
-@startuml test
-
+@startuml
 scale 0.9
 skinparam defaultFontName Calibri
 !include <office/Concepts/firewall>
@@ -19,6 +18,7 @@ skinparam defaultFontName Calibri
 
 hide stereotype
 
+
 skinparam {
     ArrowColor<< https >> Red
     ArrowColor<< http >> Green
@@ -29,19 +29,16 @@ skinparam {
     DefaultTextAlignment center
     BackgroundColor White
     shadowing false
+    RoundCorner 10
+    dpi 300
 }
 
 skinparam rectangle {
-    BackgroundColor<< firewall >> transparent
-    BorderThickness<< firewall >> 0  
-
-    BackgroundColor<< serveur >> transparent
-    BorderThickness<< serveur >> 0
-
-    BackgroundColor<< users >> transparent
-    BorderThickness<< users >> 0
+    BackgroundColor transparent
+    BorderColor #ffffff
 
     BorderColor<< groupe >> #888888
+    BorderColor<< dmz >> #555555 
 }
 
 
@@ -51,30 +48,30 @@ rectangle DMZ << dmz >> {
 }
 
 rectangle "Servers LAN"  << dmz >>  as lan {
-    rectangle "<$web_server>\nApplication" << serveur >> as App
-    rectangle "<$database_server>Redis" << serveur >> as redis
-    rectangle "<$server_farm>\nCompute" << serveur >> as hpc
-    rectangle "<$database_availability_group>\nDatabase" << serveur >> as db
-    rectangle "<$file_server>\nNAS" << serveur >> as nas
+    rectangle "<$web_server>\nApplication" as App
+    rectangle "<$database_server>Redis"  as redis
+    rectangle "<$server_farm>\nCompute"  as hpc
+    rectangle "<$database_availability_group>\nDatabase"  as db
+    rectangle "<$file_server>\nNAS"  as nas
 }
 
 rectangle "Admin LAN"  << dmz >>  as adminlan {
-    rectangle "<$cluster_server>\nBastion" << serveur >> as bastion
+    rectangle "<$cluster_server>\nBastion" as bastion
 }
 
-rectangle "<$firewall>\nexternal firewall"  << firewall >> as fwe
-rectangle "<$firewall>\ninternal firewal"  << firewall >> as fwi
-rectangle "<$firewall>\nadmin firewall E"  << firewall >> as fwa
-rectangle "<$firewall>\nadmin firewall I"  << firewall >> as fwai
+rectangle "<$firewall>\nexternal firewall"   as fwe
+rectangle "<$firewall>\ninternal firewal" as fwi
+rectangle "<$firewall>\nadmin firewall E"  as fwa
+rectangle "<$firewall>\nadmin firewall I"  as fwai
 
 
-rectangle "<$users>\nInternet Users" << users >> as users
-rectangle "<$users>\nOffices Users" << users >> as office
+rectangle "<$users>\nInternet Users"  as users
+rectangle "<$users>\nOffices Users"  as office
 
-rectangle "<$globe_internet>Internet" << serveur >> as internet
-rectangle "<$cloud>\nWAN" << serveur >> as wan
+rectangle "<$globe_internet>Internet" as internet
+rectangle "<$cloud>\nWAN"  as wan
 
-rectangle "<$administrator>\nAdmins" << users >> as Admins
+rectangle "<$administrator>\nAdmins" as Admins
 
 'user flow'
 users .> internet << https >> : 2
@@ -95,8 +92,8 @@ App --> redis << flow >> : 5
 App --> nas << nfs >>  : 7
 
 'admin flows'
-Admins -> fwa << ssh >> : a 
-fwa -> bastion << ssh >> : a
+Admins ~> fwa << ssh >> : a 
+fwa ~> bastion << ssh >> : a
 Admins -[hidden]-> bastion << ssh >>
 bastion -u-> fwai << ssh >> : b
 fwai -u-> App << ssh >> : b

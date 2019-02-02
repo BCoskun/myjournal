@@ -1,47 +1,6 @@
 @startuml
-scale 0.9
-skinparam defaultFontName Calibri
-!include <office/Concepts/firewall>
-!include <office/Servers/server_generic>
-!include <office/Servers/server_farm>
-!include <office/Servers/cluster_server>
-!include <cloudinsight/docker>
-!include <office/Servers/reverse_proxy>
-!include <office/Users/users>
-!include <office/Clouds/cloud>
-!include <office/Servers/database_server>
-!include <office/Concepts/globe_internet>
-!include <office/Databases/database_availability_group>
-!include <office/Servers/web_server>
-!include <office/Users/administrator>
-!include <office/Servers/file_server>
 
-hide stereotype
-
-
-skinparam {
-    ArrowColor<< https >> Red
-    ArrowColor<< http >> Green
-    ArrowColor<< ssh >> Purple
-    ArrowColor<< nfs >> DarkOrange
-    ArrowColor<< jdbc >> Blue
-    ArrowColor<< flow >> Black
-    DefaultTextAlignment center
-    BackgroundColor White
-    shadowing false
-    RoundCorner 10
-    dpi 300
-}
-
-skinparam rectangle {
-    BackgroundColor transparent
-    BorderColor #ffffff
-
-    BorderColor<< groupe >> #888888
-    BorderColor<< dmz >> #555555 
-}
-
-
+!includeurl  https://raw.githubusercontent.com/DBuret/myjournal/master/plantuml.cfg
 
 rectangle DMZ << dmz >> {
     rectangle "<$reverse_proxy>\nReverse Proxy\nIPS/IDS" << serveur >> as ReverseProxy

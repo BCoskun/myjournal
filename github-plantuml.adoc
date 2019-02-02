@@ -36,8 +36,12 @@ Use plantuml online server to parse the plantuml file on github, and use its ful
 
 This syntax is too long, let's use an asciidoc variable _gitplant_
 
-.Easy way to display plantuml in asciidoc on github
+Easy way to display plantuml in asciidoc on github
+
+.In the ASciiDoc header
  :gitplant: http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/DBuret/myjournal/master/
+
+.In your document
  image::{gitplant}/test.puml[test]
 
 .Result

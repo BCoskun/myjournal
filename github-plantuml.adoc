@@ -40,7 +40,7 @@ image::{gitplant}/test.puml[test]
 ----
 
 
-WARNING: I still have to check how to manage github image caching.
+TIP: Purge an image from githuib cache with: `curl -X PURG https://camo.githubusercontent.com/xxxxxxxxxxx`
 
 === plantum test
 

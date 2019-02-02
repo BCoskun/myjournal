@@ -1,7 +1,7 @@
 = using github and plantuml
 :author: David Buret
 :source-highlighter: pygments
-:pygments-style: emacs
+:pygments-style: github
 :icons: font
 :sectnums:
 :toclevels: 4
@@ -19,19 +19,18 @@ Github asciidoc parsing does not understand plantuml.
 
 Use plantuml online server to parse the plantuml file on github, and use its full url in github asciidoc files
  
-.image url 
-http://www.plantuml.com/plantuml/proxy?src=https://raw.github.com/plantuml/plantuml-server/master/src/main/webapp/resource/test2diagrams.txt
+.PlantUML proxy syntax
+http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/DBuret/myjournal/master/test.puml
 
-.my test
-
+.AsciiDoc syntax
 [source]
 ----
 image::http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/DBuret/myjournal/master/test.puml[test]
 ----
 
-syntax is very long, let's use an asciidoc variable +gitplant+
+This syntax is too, let's use an asciidoc variable _gitplant_
 
-.how to display plantuml in asciidoc on github
+.Easy way to display plantuml in asciidoc on github
 [source]
 ----
 :gitplant: http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/DBuret/myjournal/master/
@@ -39,8 +38,8 @@ syntax is very long, let's use an asciidoc variable +gitplant+
 image::{gitplant}/test.puml[test]
 ----
 
-=== Result
+== Result
 
 image::{gitplant}/test.puml[PlantUML Image]
 
-TIP: Purge an image from githuib cache with: `curl -X PURG https://camo.githubusercontent.com/xxxxxxxxxxx`
+TIP: Purge an image from GitHub cache with: `curl -X PURG https://camo.githubusercontent.com/xxxxxxxxxxx`

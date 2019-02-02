@@ -56,7 +56,8 @@ TIP: Purge an image from GitHub cache with: `curl -X PURG https://camo.githubuse
 
 If you want to use a styling shared by several plantUML diagrams, you can _include_ a file from an HTTP repository.
 
-I'm using the follwoing:
+I'm using the following:
+
  !includeurl  https://raw.githubusercontent.com/DBuret/myjournal/master/plantuml.cfg
 
 All my _skinparam_, _include_ of sprites, and so on are stored in this file.

@@ -44,4 +44,4 @@ WARNING: I still have to check how to manage github image caching.
 
 === plantum test
 
-image::{gitplant}/test.puml[test]
+image::{gitplant}/test.puml[PlantUML Image]

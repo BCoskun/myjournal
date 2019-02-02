@@ -23,7 +23,7 @@
 
 https://www.uml-diagrams.org/deployment-diagrams-reference.html
 
-image::{gitplant}/deploy-test.puml[test deploy diagram ]
+image::{gitplant}/test.puml[test deploy diagram ]
 
 
 == activity diagram

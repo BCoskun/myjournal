@@ -29,23 +29,16 @@ WARNING: AsciiDoc on GitHub currently needs some tricks. See https://gist.github
 Use plantuml online server to parse the plantuml file on github, and use its full url in github asciidoc files
  
 .PlantUML proxy syntax
-http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/DBuret/myjournal/master/test.puml
+ http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/DBuret/myjournal/master/test.puml
 
 .AsciiDoc syntax
-[source]
-----
-image::http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/DBuret/myjournal/master/test.puml[test]
-----
+ image::http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/DBuret/myjournal/master/test.puml[test]
 
 This syntax is too long, let's use an asciidoc variable _gitplant_
 
 .Easy way to display plantuml in asciidoc on github
-[source]
-----
-:gitplant: http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/DBuret/myjournal/master/
-
-image::{gitplant}/test.puml[test]
-----
+ :gitplant: http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/DBuret/myjournal/master/
+ image::{gitplant}/test.puml[test]
 
 .Result
 image::{gitplant}/test.puml[PlantUML Image]

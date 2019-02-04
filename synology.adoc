@@ -1,0 +1,47 @@
+= synology
+:author: David Buret
+:source-highlighter: pygments
+:pygments-style: emacs
+:icons: font
+:sectnums:
+:toclevels: 4
+:toc:
+:imagesdir: images/
+:toc-title: Sommaire
+:gitplant: http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/DBuret/myjournal/master/
+
+
+== my syno
+
+.architecture
+|===
+| name | cpu| # cores|#threads|fpu |  Package Arch| ram
+
+|DS413j	|Marvell Kirkwood 88F6282	|Single Core	|1	|No	|88f628x	|DDR3 512 MB
+|===
+
+== dev
+
+=== syno docs
+
+https://www.synology.com/en-us/support/developer#tool
+
+=== toolchain
+
+download from https://sourceforge.net/projects/dsgpl/[sourceforge dsgpl project]
+
+=== go cross compil
+
+.prepare
+[source,sh]
+----
+GOOS=linux GOARCH=arm CGO_ENABLED=0 ./make.bash --no-clean
+----
+
+.compil
+[source,sh]
+----
+GOOS=linux GOARCH=arm GOARM=5 go build HelloWorld.go
+----
+
+CGO_ENABLED=0 ?

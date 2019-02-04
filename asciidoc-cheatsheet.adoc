@@ -9,7 +9,9 @@
 :imagesdir: images/
 :toc-title: Sommaire
 
- 
+++++
+<link rel="stylesheet"  href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.1.0/css/font-awesome.min.css">
+++++
  
 [descrete]
 == Controle du document
@@ -113,6 +115,8 @@ Type: paragraph
 - WARNING
 - CAUTION
 - IMPORTANT
+
+WARNING: TEST
 
 == generate zdoc file with all'includes included
 

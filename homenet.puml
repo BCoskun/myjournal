@@ -43,7 +43,7 @@ rectangle "<$device_laptop>\nmanon" as lapmanon
 internet -- freebox
 freebox -- routeur
 
-routeur == salon <<https>> : "vlan 100\n& untagged"
+routeur = salon <<https>> : "vlan 100\n& untagged"
 routeur ---- wifi
 routeur -- bureau
 routeur -l- chambre

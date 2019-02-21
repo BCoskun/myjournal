@@ -4,9 +4,9 @@
  rectangle "<$globe_internet>\n" as internet
  rectangle "<$voip_gateway>\nfreebox" as freebox
  rectangle "<$modem>\nrouteur" as routeur
- rectangle "<$switch>\nsalon" as salon
- rectangle "<$switch>\nbureau" as bureau
- rectangle "<$switch>\nchambre" as chambre
+ rectangle "<$switch>\nswitch\nsalon" as salon
+ rectangle "<$switch>\nswitch\nbureau" as bureau
+ rectangle "<$switch>\nswitch\nchambre" as chambre
  rectangle "<$wifi>" as wifi
  
  
@@ -43,7 +43,7 @@ rectangle "<$device_laptop>\nmanon" as lapmanon
 internet -- freebox
 freebox -- routeur
 
-routeur = salon <<https>>
+routeur = salon <<https>> : "vlan 100 & untagged"
 routeur ---- wifi
 routeur -- bureau
 routeur -l- chambre
@@ -55,7 +55,7 @@ bureau -- pc
 bureau -- alien 
 bureau -- server
 
-salon == player  <<https>>
+salon == player  <<https>> : "vlan 100 & untagged"
 salon -- shield
 salon -- denon 
 salon -- wiiU

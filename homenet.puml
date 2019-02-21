@@ -13,7 +13,7 @@
  rectangle "<$workstation>\nPC" as pc
  rectangle "<$device_laptop>\nalienware" as alien
  rectangle "<$file_server>\nNAS" as nas
- 
+ rectangle "<$server_farm>\nsupermicro" as server
  
  rectangle "<$device_tv>\nchambre" as tvch
 rectangle "<$chrome>\nchambre" as ccchambre
@@ -53,6 +53,7 @@ chambre -l- tvch
 bureau -- nas
 bureau -- pc
 bureau -- alien 
+Bureau -- server
 
 salon == player  <<https>>
 salon -- shield

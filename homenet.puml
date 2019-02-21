@@ -1,19 +1,6 @@
 @startuml
 
  !includeurl  https://raw.githubusercontent.com/DBuret/myjournal/master/plantuml.cfg
- 
-!include <office/Servers/file_server>
-!include <office/Communications/voip_gateway>
-!include <office/Devices/cell_phone_generic>
-!include <office/Devices/device_tv>
-!include <office/Devices/device_laptop>
-!include <office/Devices/device_tablet_ipad>
-!include <office/Devices/device_printer>
-!include <office/Devices/device_modem>
-!include <office/Devices/device_routeur>
-!include <office/Devices/device_switch>
-!include <office/Devices/workstation>
-
 
  rectangle "<$globe_internet>" as internet
  rectangle "<$d5voip_gateway>\nfreebox" as freebox

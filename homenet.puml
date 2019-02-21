@@ -54,10 +54,10 @@ bureau -- nas
 bureau -- pc
 bureau -- alien 
 
-salon = player  <<https>>
-salon - shield
-salon - denon 
-salon - wiiU
+salon == player  <<https>>
+salon -- shield
+salon -- denon 
+salon -- wiiU
 
 wifi -- print 
 Wifi -- tvsalon

@@ -1,0 +1,70 @@
+@startuml
+
+ !includeurl  https://raw.githubusercontent.com/DBuret/myjournal/master/plantuml.cfg
+ 
+!include <office/Servers/file_server>
+!include <office/Communications/voip_gateway>
+!include <office/Devices/cell_phone_generic>
+!include <office/Devices/device_tv>
+!include <office/Devices/device_laptop>
+!include <office/Devices/device_tablet_ipad>
+!include <office/Devices/device_printer>
+!include <office/Devices/device_modem>
+!include <office/Devices/device_routeur>
+!include <office/Devices/device_switch>
+!include <office/Devices/workstation>
+
+
+ rectangle "<$globe_internet>" as internet
+ rectangle "<$d5voip_gateway>\nfreebox" as freebox
+ rectangle "<$device_modem>\nrouteur" as routeur
+ rectangle "<$device_switch>\nsalon" as salon
+ rectangle "<$device_switch>\nbureau" as bureau
+ rectangle "<$device_switch>\nchambre" as chambre
+ 
+ rectangle "<$workstation>\nPC>" as pc
+ rectangle "<$device_laptop>\nalienware" as alien
+ rectangle "<$file_server>\nNAS>" as nas
+ 
+ 
+ rectangle "<$device_tv>\nchambre" as tvch
+ 
+ //FA5_CHROME
+ //film
+ music
+ FA5_NINTENDO_SWITCH
+ 
+ rectangle "<$device_tv>\nsalon" as tvsalon
+ rectangle "<$device>\nfreebox player" as player
+ rectangle "<$film>\nshield" as shield
+ rectangle "<$music>\nampli denon" as denon 
+ rectangle "<$nintendo_switch>\nWiiU" as wiiU
+ 
+ rectangle "<$device_printer>" as print
+ 
+ rectangle "<$chrome>\ncuisine" as cccuisine
+ rectangle "<$chrome>\nchambre" as ccchambre
+ 
+ 
+ 
+internet -- freebox
+freebox -- routeur
+
+routeur -- salon
+routeur -- bureau
+routeur -- chambre
+
+chambre -- tvch 
+
+bureau -- nas
+bureau -- pc
+bureau -- alien 
+
+salon -- player
+salon -- shield
+salon -- denon 
+salon -- print 
+salon -- wiiU
+salon -- tvsalon
+
+@enduml

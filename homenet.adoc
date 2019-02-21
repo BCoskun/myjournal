@@ -1,4 +1,6 @@
 = home network
+:gitplant: http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/DBuret/myjournal/master/
 
+== scenario a
 
-
+image::{gitplant}/homenet.puml[test]

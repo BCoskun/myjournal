@@ -1,7 +1,7 @@
 @startuml
 !includeurl  https://raw.githubusercontent.com/DBuret/myjournal/master/plantuml.cfg
 
- rectangle "<$globe_internet>" as internet
+ rectangle "<$globe_internet>\n" as internet
  rectangle "<$voip_gateway>\nfreebox" as freebox
  rectangle "<$modem>\nrouteur" as routeur
  rectangle "<$switch>\nsalon" as salon
@@ -28,23 +28,23 @@ rectangle "<$chrome>\nchambre" as ccchambre
  
  rectangle "<$chrome>\ncuisine" as cccuisine
  
-rectangle "<$cell_phone_generic>" as telmanon
-rectangle "<$cell_phone_generic>" as telsylvain
-rectangle "<$cell_phone_generic>" as telelisa
-rectangle "<$cell_phone_generic>" as teldavid
-rectangle "<$cell_phone_generic>" as telcorinne
-rectangle "<$device_tablet_ipad>" as ipad
-rectangle "<$device_tablet_ipad>" as ipadmini
-rectangle "<$device_laptop>" as tabsylvain
-rectangle "<$device_laptop>" as tabelisa
-rectangle "<$device_latop>" as lapmanon
+rectangle "<$cell_phone_generic>\nmanon" as telmanon
+rectangle "<$cell_phone_generic>\nsylvain" as telsylvain
+rectangle "<$cell_phone_generic>\nelisa" as telelisa
+rectangle "<$cell_phone_generic>\ndavid" as teldavid
+rectangle "<$cell_phone_generic>\ncorinne" as telcorinne
+rectangle "<$device_tablet_ipad>\ndavid" as ipad
+rectangle "<$device_tablet_ipad>\ncorinne" as ipadmini
+rectangle "<$device_laptop>\nsylvain" as tabsylvain
+rectangle "<$device_laptop>\nelisa" as tabelisa
+rectangle "<$device_latop>\nmanon" as lapmanon
  
  
 internet -- freebox
 freebox -- routeur
 
 routeur == salon <<https>>
-routeur -- wifi
+routeur ---- wifi
 routeur -- bureau
 routeur -- chambre
 
@@ -62,7 +62,7 @@ salon -- wiiU
 salon -- tvsalon
 
 wifi -- wiiU
-wifi -- ccuisine
+wifi -- cccuisine
 wifi -- ccchambre
 wifi -- telmanon
 wifi -- telsylvain

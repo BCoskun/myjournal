@@ -29,11 +29,6 @@
  
  rectangle "<$device_tv>\nchambre" as tvch
  
- //FA5_CHROME
- //film
- music
- FA5_NINTENDO_SWITCH
- 
  rectangle "<$device_tv>\nsalon" as tvsalon
  rectangle "<$device>\nfreebox player" as player
  rectangle "<$film>\nshield" as shield

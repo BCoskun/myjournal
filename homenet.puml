@@ -20,9 +20,9 @@ rectangle "<$chrome>\nchambre" as ccchambre
  
  rectangle "<$device_tv>\nsalon" as tvsalon
  rectangle "<$film>\nfreebox player" as player
- rectangle "<$film>\nshield" as shield
+ rectangle "<$film>\n<$gamepad>\nshield" as shield
  rectangle "<$music>\nampli denon" as denon 
- rectangle "<$nintendo_switch>\nWiiU" as wiiU
+ rectangle "<$gamepad>\nWiiU" as wiiU
  
  rectangle "<$device_printer>" as print
  

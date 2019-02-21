@@ -43,21 +43,21 @@ rectangle "<$device_laptop>\nmanon" as lapmanon
 internet -- freebox
 freebox -- routeur
 
-routeur == salon <<https>>
+routeur = salon <<https>>
 routeur ---- wifi
 routeur -- bureau
-routeur -- chambre
+routeur - chambre
 
-chambre -- tvch 
+chambre - tvch 
 
 bureau -- nas
 bureau -- pc
 bureau -- alien 
 
-salon == player  <<https>>
-salon -- shield
-salon -- denon 
-salon -- wiiU
+salon = player  <<https>>
+salon - shield
+salon - denon 
+salon - wiiU
 
 wifi -- print 
 Wifi -- tvsalon

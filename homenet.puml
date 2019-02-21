@@ -37,7 +37,7 @@ rectangle "<$device_tablet_ipad>\ndavid" as ipad
 rectangle "<$device_tablet_ipad>\ncorinne" as ipadmini
 rectangle "<$device_laptop>\nsylvain" as tabsylvain
 rectangle "<$device_laptop>\nelisa" as tabelisa
-rectangle "<$device_latop>\nmanon" as lapmanon
+rectangle "<$device_laptop>\nmanon" as lapmanon
  
  
 internet -- freebox
@@ -57,11 +57,10 @@ bureau -- alien
 salon == player  <<https>>
 salon -- shield
 salon -- denon 
-salon -- print 
 salon -- wiiU
-salon -- tvsalon
 
-wifi -- wiiU
+wifi -- print 
+Wifi -- tvsalon
 wifi -- cccuisine
 wifi -- ccchambre
 wifi -- telmanon

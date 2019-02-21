@@ -3,7 +3,7 @@
  !includeurl  https://raw.githubusercontent.com/DBuret/myjournal/master/plantuml.cfg
 
  rectangle "<$globe_internet>" as internet
- rectangle "<$d5voip_gateway>\nfreebox" as freebox
+ rectangle "<$voip_gateway>\nfreebox" as freebox
  rectangle "<$device_modem>\nrouteur" as routeur
  rectangle "<$device_switch>\nsalon" as salon
  rectangle "<$device_switch>\nbureau" as bureau

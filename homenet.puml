@@ -55,7 +55,7 @@ bureau -- pc
 bureau -- alien 
 bureau -- server
 
-salon == player  <<https>> : "vlan 100\n& untagged"
+salon = player  <<https>> : "vlan 100\n& untagged"
 salon -- shield
 salon -- denon 
 salon -- wiiU

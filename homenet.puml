@@ -22,7 +22,7 @@ rectangle "<$chrome>\nchambre" as ccchambre
  rectangle "<$film>\nfreebox player" as player
  rectangle "<$film>\n<$gamepad>\nshield" as shield
  rectangle "<$music>\nampli denon" as denon 
- rectangle "<$gamepad>\nWiiU" as wiiU
+ rectangle "<$gamepad>\nWii U" as wiiU
  
  rectangle "<$device_printer>" as print
  
@@ -38,6 +38,7 @@ rectangle "<$device_tablet_ipad>\ncorinne" as ipadmini
 rectangle "<$device_laptop>\nsylvain" as tabsylvain
 rectangle "<$device_laptop>\nelisa" as tabelisa
 rectangle "<$device_laptop>\nmanon" as lapmanon
+rectangle "<$cloudscale>\nnokia" as Nokia
  
  
 internet -- freebox
@@ -64,15 +65,16 @@ wifi -- print
 wifi -- tvsalon
 wifi -- cccuisine
 wifi -- ccchambre
-wifi -- telmanon
-wifi -- telsylvain
-wifi -- telelisa
-wifi -- teldavid
-wifi -- telcorinne
+wifi --- telmanon
+wifi --- telsylvain
+wifi --- telelisa
+wifi --- teldavid
+wifi --- telcorinne
 wifi -- ipad
 wifi -- ipadmini
 wifi -- tabsylvain
 wifi -- tabelisa
 wifi -- lapmanon
+Wifi -- Nokia
 
 @enduml

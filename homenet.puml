@@ -46,9 +46,9 @@ freebox -- routeur
 routeur = salon <<https>>
 routeur ---- wifi
 routeur -- bureau
-routeur - chambre
+routeur -l- chambre
 
-chambre - tvch 
+chambre -l- tvch 
 
 bureau -- nas
 bureau -- pc

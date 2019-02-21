@@ -33,7 +33,7 @@ rectangle "<$chrome>\nchambre" as ccchambre
 internet -- freebox
 freebox -- routeur
 
-routeur == salon
+routeur == salon <<https>>
 routeur -- wifi
 routeur -- bureau
 routeur -- chambre
@@ -44,7 +44,7 @@ bureau -- nas
 bureau -- pc
 bureau -- alien 
 
-salon == player
+salon == player  <<https>>
 salon -- shield
 salon -- denon 
 salon -- print 

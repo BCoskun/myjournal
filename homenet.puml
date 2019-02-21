@@ -28,6 +28,16 @@ rectangle "<$chrome>\nchambre" as ccchambre
  
  rectangle "<$chrome>\ncuisine" as cccuisine
  
+rectangle "<$cell_phone_generic>" as telmanon
+rectangle "<$cell_phone_generic>" as telsylvain
+rectangle "<$cell_phone_generic>" as telelisa
+rectangle "<$cell_phone_generic>" as teldavid
+rectangle "<$cell_phone_generic>" as telcorinne
+rectangle "<$device_tablet_ipad>" as ipad
+rectangle "<$device_tablet_ipad>" as ipadmini
+rectangle "<$device_laptop>" as tabsylvain
+rectangle "<$device_laptop>" as tabelisa
+rectangle "<$device_latop>" as lapmanon
  
  
 internet -- freebox
@@ -50,5 +60,19 @@ salon -- denon
 salon -- print 
 salon -- wiiU
 salon -- tvsalon
+
+wifi -- wiiU
+wifi -- ccuisine
+wifi -- ccchambre
+wifi -- telmanon
+wifi -- telsylvain
+wifi -- telelisa
+wifi -- teldavid
+wifi -- telcorinne
+wifi -- ipad
+wifi -- ipadmini
+wifi -- tabsylvain
+wifi -- tabelisa
+wifi -- lapmanon
 
 @enduml

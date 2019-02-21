@@ -53,7 +53,7 @@ chambre -l- tvch
 bureau -- nas
 bureau -- pc
 bureau -- alien 
-Bureau -- server
+bureau -- server
 
 salon == player  <<https>>
 salon -- shield
@@ -61,7 +61,7 @@ salon -- denon
 salon -- wiiU
 
 wifi -- print 
-Wifi -- tvsalon
+wifi -- tvsalon
 wifi -- cccuisine
 wifi -- ccchambre
 wifi -- telmanon

@@ -6,18 +6,18 @@
 image::{gitplant}/homenet.puml[homenet]
 
 * reparametrer freebox
-* noter toutes les regles de port forwarding
+** noter toutes les regles de port forwarding
 ** noter tous les baux statiques
 ** changer reseau pour 192.168.*128*.254
 ** dmz 192.168.128.1
 ** stop wifi
 * netgear
 ** wan ip fixe sur 192.168.128.1/24 gtw 192.168.*128*.254
-** lan 192.168.0.0/17 gtw 192.168.1.254
+** lan 192.168.0.0/17 mask 255.255.128.0 gtw 192.168.1.254
 *** le routeur va gerer les ip de 192.168.0.0 à 192.168.127.255
 ** dhcp 192.168.1.2 a 200, opendns
 ** ajouter les baux statiques
-** activer igmp proxing (peut etre necessaire a certains flux iptv)
+** activer igmp proxing si pb tv sur pc
 ** activer la reponse au ping - verifier que depuis internet cela ne repond pas, sinon le desactiver
 ** wifi comme avant
 ** bridge vlan 100 vers port salon

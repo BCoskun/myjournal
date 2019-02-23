@@ -1,27 +1,82 @@
 = home network
 :gitplant: http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/DBuret/myjournal/master/
 
-== scenario a
+== scenario routeur
 
+WARNING: as of FEb, 23th 2019, netgear r7800 firmware does not support 2 vlan on same port. Therefore, the following scenario is impossible
 
-image::{gitplant}/homenet.puml[homenet]
+image::{gitplant}/homenet-r.puml[homenet]
 
-* reparametrer freebox
-** noter toutes les regles de port forwarding
-** noter tous les baux statiques
-** changer reseau pour 192.168.*128*.254
-** dmz 192.168.128.1
-** stop wifi
-* netgear
-** wan ip fixe sur 192.168.128.1/24 gtw 192.168.*128*.254
-** lan 192.168.0.0/17 mask 255.255.128.0 gtw 192.168.1.254
-*** le routeur va gerer les ip de 192.168.0.0 à 192.168.127.255
-** dhcp 192.168.1.2 a 200, opendns
+.freebox
+* 'mode reseau': routeur, 192.168.*128*.254
+* dhcp
+** activer
+** range 192.168.128.1 a 192.168.128.253
+** assignation fixe par machine
+** bail statique pour "r7800" mac=8C:3B:AD:BA:2A:48 ip=192.168.128.1
+** DNS
+*** 192.168.128.254
+* gestion des ports
+** desactiver les regles
+** DMZ 192.168.128.1
+* stop wifi
+
+.netgear
+* wan
+** DHCP va donner 192.168.128.1/24 mask 255.255.255.0 gtw 192.168.*128*.254
+* lan
+** routeur 192.168.1.1/17 mask 255.255.128.0
+** le routeur va gerer les ip de 192.168.0.0 à 192.168.7.255
+* dhcp 
+** range 192.168.1.2 a 253
+** DNS , opendns
+*** 208.67.220.220
+***  208.67.222.222
 ** ajouter les baux statiques
 ** activer igmp proxing si pb tv sur pc
-** activer la reponse au ping - verifier que depuis internet cela ne repond pas, sinon le desactiver
 ** wifi comme avant
 ** bridge vlan 100 vers port salon
 ** port forwarding 
-** dynamic qos
+*** elitedangerous 28647 vers pc2012
+*** plex 32400 vers shield
+*** download station 16881 vers nas-bureau
+*** *DMZ OFF*
+* dynamic qos
+
+== scenario router dirty
+
+image::{gitplant}/homenet-rd.puml[homenet]
+
+
+
+
+== scenario AP
+
+image::{gitplant}/homenet-ap.puml[homenet]
+
+.freebox
+* 'mode reseau': routeur, 192.168.*1*.254
+* dhcp
+** activer
+** range 192.168.1.1 a 192.168.128.199
+** assignation fixe par machine
+** bail statique
+*** "r7800" mac=8C:3B:AD:BA:2A:48 ip=192.168.128.1
+*** pc2012 192.168.1.99
+*** nas-bureau 192.168.1.49
+*** printer 192.168.1.114
+*** shield 192.168.1.140
+*** freebox player 192.168.1.100
+** DNS
+*** 208.67.220.220
+*** 208.67.222.222
+* stop wifi
+* port forwarding 
+** *DMZ OFF*
+** elitedangerous 28647 vers pc2012
+** plex 32400 vers shield
+** download station 16881 vers nas-bureau
+
+.netgear
+* conf avvancee, mode router/ap/pont => AP
 

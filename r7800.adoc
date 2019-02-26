@@ -1,0 +1,42 @@
+= Notes abour netgear nighthawk X4s r7800
+:author: David Buret
+:source-highlighter: pygments
+:pygments-style: github
+:icons: font
+:sectnums:
+:toclevels: 4
+:toc:
+:imagesdir: images/
+:toc-title: Sommaire
+:gitplant: http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/DBuret/myjournal/master/
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+
+== Misc
+
+== Firmwares
+
+* Netgear
+** vlan support very limited: simple brige of a spécific vlan tag 
+* Voxel
+** vlan support very limited: simple brige of a spécific vlan tag 
+* Dd-wrt
+** vlan ok, but no more dynamic QoS i think
+* tomato
+* openwrt
+
+== To be explored
+
+.On r7000 you can do the following
+ config show
+ nvram set vlan1ports="1 2 3 5*"
+ nvram set vlan6ports="0t 4"
+ nvram set port4vlans=6
+ nvram set vlan6hwname=et0
+ nvram commit
+
